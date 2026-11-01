@@ -4,13 +4,11 @@ SYX is a fast CLI tool for analyzing PE files (x86/x64) and DLLs. It uses modula
 
 ## Usage
 
-`ash
-syx.exe !watch EX:/path/to/file.exe
+`syx.exe !watch EX:/path/to/file.exe
 `
 Scans the file, identifies architecture/sections/entry point, detects functions/xrefs/strings, and recreates a clean source layout.
 
-`ash
-syx.exe !port EX:/path/to/file.dll
+`syx.exe !port EX:/path/to/file.dll
 `
 Scans for network-related indicators (IPs, domains, ports, APIs) and writes a JSON report.
 
@@ -24,15 +22,14 @@ Scans for network-related indicators (IPs, domains, ports, APIs) and writes a JS
 ## Build
 
 Requires MSVC (Visual Studio). Use provided build scripts or compile with:
-`ash
-cl.exe /EHsc /std:c++17 /Fe:syx.exe src\main.cpp /link /SUBSYSTEM:CONSOLE
+`cl.exe /EHsc /std:c++17 /Fe:syx.exe src\main.cpp /link /SUBSYSTEM:CONSOLE
 `
 
 ## Output
 
 When using !watch, SYX generates:
-- nalysis/ - Reports
-- sm/ - Disassembly
+- analysis/ - Reports
+- asm/ - Disassembly
 - decompiled/ - Reconstructed C source
 - unctions/ - Detected functions
 - xrefs/ - Cross references
